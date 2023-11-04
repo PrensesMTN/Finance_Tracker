@@ -47,21 +47,9 @@ class App(customtkinter.CTk):
         self.main_button_ara.grid(row=3, column=3, padx=(20, 20), pady=(20, 20), sticky="nsew")
 
         # create treeview
-        self.style = ttk.Style()
-        self.style.configure("Treeview", font=("Proxima Nova", 10), rowheight=40, relief="solid")
-        self.inventory_treeview = ttk.Treeview(self, columns=("Ürün Tanımı", "Seri No", "Parça No", "Şirket", "Adet", "Durum"), show="headings", style="Treeview")
-        self.inventory_treeview.heading("Ürün Tanımı", text="Ürün Tanımı", anchor="w")
-        self.inventory_treeview.heading("Seri No", text="Seri No", anchor="w")
-        self.inventory_treeview.heading("Parça No", text="Parça No", anchor="w")
-        self.inventory_treeview.heading("Şirket", text="Şirket", anchor="w")
-        self.inventory_treeview.heading("Adet", text="Adet", anchor="w")
-        self.inventory_treeview.heading("Durum", text="Durum", anchor="w")
-
-        self.inventory_treeview.grid(row=0, column=1,  padx=(5, 0), pady=(10, 0), sticky="nsew")
+        self.vsb = customtkinter.CTkButton(master=self,text="ARA", fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"),command=self.open_input_dialog_event)
+        self.vsb.grid(row=1, column=1,sticky="nsew")
         
-        vsb = ttk.Scrollbar(self, orient="vertical", command=self.inventory_treeview.yview)
-        vsb.grid(row=1, column=4, sticky='ns')
-        self.inventory_treeview.configure(yscrollcommand=vsb.set)
          
         
     def open_input_dialog_event(self):
