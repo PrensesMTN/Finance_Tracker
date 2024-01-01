@@ -9,6 +9,9 @@ import os
 customtkinter.set_appearance_mode("Dark")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("green")  # Themes: "blue" (standard), "green", "dark-blue"
 
+
+
+
 FRAME="frame"
 class App(customtkinter.CTk):
     def __init__(self):
