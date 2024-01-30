@@ -30,16 +30,15 @@ class App(customtkinter.CTk):
         self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="PERSION", font=customtkinter.CTkFont(size=20, weight="bold"))
         self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
 
-        self.sidebar_Ekle = customtkinter.CTkButton(self.sidebar_frame, text="INCOME", command="")
+        self.sidebar_Ekle = customtkinter.CTkButton(self.sidebar_frame, text="INCOME", command=self.open_input_dialog_event)
         self.sidebar_Ekle.grid(row=2, column=0, padx=20, pady=10)
-        self.sidebar_Düzenle = customtkinter.CTkButton(self.sidebar_frame,text="OUT", command="")
+        self.sidebar_Düzenle = customtkinter.CTkButton(self.sidebar_frame,text="OUT", command=out)
         self.sidebar_Düzenle.grid(row=3, column=0, padx=20, pady=10)
 
-        self.sidebar_Sil = customtkinter.CTkButton(self.sidebar_frame,text="Sil(Çoklu silme)", command="")
+        self.sidebar_Sil = customtkinter.CTkButton(self.sidebar_frame,text="Delete", command=delete)
         self.sidebar_Sil.grid(row=4, column=0, padx=20, pady=10)        
-        self.sidebar_Yenile = customtkinter.CTkButton(self.sidebar_frame,text="Yenile", command="")
-        self.sidebar_Yenile.grid(row=5, column=0, padx=20, pady=10)
-
+        self.sidebar_Yenile = customtkinter.CTkButton(self.sidebar_frame,text="Refresh", command=refresh)
+        self.sidebar_Yenile.grid(row=5, column=0, padx=20, pady=10) 
 
         # create main entry and button
 #         self.entry_ara = customtkinter.CTkEntry(self, placeholder_text="Aramak istediğiniz ürünü giriniz.")
@@ -51,9 +50,8 @@ class App(customtkinter.CTk):
         # create treeview
         # self.vsb = customtkinter.CTkButton(master=self,text="ARA", fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"),command=self.open_input_dialog_event)
         # self.vsb.grid(row=1, column=1,sticky="nsew")
-        
-         
-        
+
+
     def open_input_dialog_event(self):
         dialog = customtkinter.CTkInputDialog(text="Type in a number:", title="CTkInputDialog")
         print("CTkInputDialog:", dialog.get_input())
@@ -63,14 +61,19 @@ class App(customtkinter.CTk):
         dialog = customtkinter.CTkInputDialog(text="Type in a number:", title="CTkInputDialog")
         print("sidebar_button click:", dialog.get_input())
  
+        
+def income ():
+        print("income")
+        
+def out ():
+        print("out")
 
-
-
-
-
-
-
-
+        
+def delete ():
+        print("delete")
+        
+def refresh ():
+        print("refresh")
 
 if __name__ == "__main__":
     app = App()
