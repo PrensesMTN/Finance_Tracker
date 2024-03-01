@@ -30,7 +30,7 @@ class App(customtkinter.CTk):
         self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="PERSION", font=customtkinter.CTkFont(size=20, weight="bold"))
         self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
 
-        self.sidebar_Ekle = customtkinter.CTkButton(self.sidebar_frame, text="INCOME", command=self.open_input_dialog_event)
+        self.sidebar_Ekle = customtkinter.CTkButton(self.sidebar_frame, text="INCOME", command=self.income_tx)
         self.sidebar_Ekle.grid(row=2, column=0, padx=20, pady=10)
         self.sidebar_Düzenle = customtkinter.CTkButton(self.sidebar_frame,text="OUT", command=out)
         self.sidebar_Düzenle.grid(row=3, column=0, padx=20, pady=10)
@@ -60,6 +60,13 @@ class App(customtkinter.CTk):
     def sidebar_button_event(self):
         dialog = customtkinter.CTkInputDialog(text="Type in a number:", title="CTkInputDialog")
         print("sidebar_button click:", dialog.get_input())
+
+    def income_tx(self):
+          #create main entry and button
+          self.entry_ara = customtkinter.CTkEntry(self, placeholder_text="Aramak istediğiniz ürünü giriniz.")
+          self.entry_ara.grid(row=3, column=1, columnspan=2, padx=(20, 0), pady=(20, 20), sticky="nsew")
+
+          
  
         
 def income ():
