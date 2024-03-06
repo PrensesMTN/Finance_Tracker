@@ -71,11 +71,8 @@ class App(customtkinter.CTk):
           self.entry_ara.grid(row=1, column=1, columnspan=2, padx=(20, 0), pady=(20, 20), sticky="nsew")
           #income()
 
-          
- 
-        
 def income ():
-        print("income")
+        print("gelen maaş içeri aktarıldı")
 
         # Creating dataset
         size = 6
