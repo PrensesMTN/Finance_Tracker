@@ -16,6 +16,10 @@ from matplotlib.figure import Figure
 customtkinter.set_appearance_mode("Dark")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("green")  # Themes: "blue" (standard), "green", "dark-blue"
 
+
+from PIL import Image, ImageTk
+
+
 FRAME="frame"
 class App(customtkinter.CTk):
     def __init__(self):
@@ -34,7 +38,8 @@ class App(customtkinter.CTk):
         self.sidebar_frame = customtkinter.CTkFrame(self, width=140, corner_radius=0)
         self.sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
         self.sidebar_frame.grid_rowconfigure(4, weight=1)
-        self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="PERSION", font=customtkinter.CTkFont(size=20, weight="bold"))
+        self.logo_image = customtkinter.CTkImage(Image.open("/Users/prenses/Documents/Finance_Tracker/2.png"), size=(120, 120))
+        self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text=" ", font=customtkinter.CTkFont(size=20, weight="bold"),image=self.logo_image)
         self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
 
         self.sidebar_Ekle = customtkinter.CTkButton(self.sidebar_frame, text="INCOME", command=self.income)
@@ -46,6 +51,9 @@ class App(customtkinter.CTk):
         self.sidebar_Sil.grid(row=4, column=0, padx=20, pady=10)        
         self.sidebar_Yenile = customtkinter.CTkButton(self.sidebar_frame,text="Refresh", command=refresh)
         self.sidebar_Yenile.grid(row=5, column=0, padx=20, pady=10) 
+       # self.button_image = customtkinter.CTkImage(Image.open("/Users/prenses/Documents/Finance_Tracker/2.png"), size=(26, 26))
+       # self.image_button = customtkinter.CTkButton(self, text="Text will be gone if you don't use compound attribute",image=self.button_image)
+       # self.image_button.grid(row=0,column=0)
 
         # create main entry and button
         self.entry_ara = customtkinter.CTkEntry(self, placeholder_text="Aramak istediğiniz ürünü giriniz.")
